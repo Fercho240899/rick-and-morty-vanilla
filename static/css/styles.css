@@ -1,0 +1,241 @@
+body{
+    margin: 0;
+    background: #00a5be;
+    font-family: system-ui;
+    overflow-x: hidden;
+    background-image: url('../images/asset-red.svg');
+    background-position: left 200px top;
+    background-repeat: no-repeat;
+}
+.logo{
+    grid-area: logo;
+    margin: 0 auto 2em;
+    display: block;
+}
+.grid{
+    display: grid;
+    height: calc(100vh - 8em);
+    padding: 4em;
+    grid-template-columns: 50px 1fr 1fr 200px;
+    grid-template-rows: 230px 100px 1fr 1fr 1fr;
+    grid-column-gap: 8em;
+    grid-template-areas: "asset-top logo logo social" "name character-name avatar avatar" "about character-description avatar avatar" "asset-bottom character-text avatar avatar" "asset-botton learn-more arrow other-line" ;
+}
+.character-image-container{
+    grid-area: avatar;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.arrow{
+    grid-area: arrow;
+    background-image: url(../images/arrow.svg);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+
+}
+.learn-more{
+    grid-area: learn-more;
+    display: flex;
+    align-items: flex-end;
+    font-size: 25px;
+    text-transform: uppercase;
+    background-image: url(../images/learn-more.svg);
+    background-repeat: no-repeat;
+    background-position: left 170px bottom 5px;
+}
+.asset.top{
+    grid-area: asset-top;
+}
+.asset{
+    /* margin-inline-start: 4em; */
+    writing-mode: vertical-rl;
+    display: flex;
+    align-items: center;
+}
+.asset.bottom{
+    grid-area: asset-bottom;
+    /* margin-inline-start: 4em; */
+    justify-content: flex-end;
+}
+.navigation{
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.navigation.name{
+    grid-area: name;
+}
+.navigation.about{
+    grid-area: about;
+}
+.navigation a {
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    text-transform: uppercase;
+
+}
+.social{
+    grid-area: social;
+}
+.character-name-container{
+    display: flex;
+    align-items: center;
+    /* padding-inline-start: 1em; */
+}
+.character-description-container{
+    grid-area: character-description;
+
+}
+
+/* .navigation{
+    transform-origin: left bottom;
+    transform: rotate(180deg) ;
+    writing-mode: vertical-lr;
+    position: absolute;
+    left: 2em;
+    height: calc(100vh - 8em);
+    bottom: 0;
+    text-align: center;
+    border: 1px solid red;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 4em;
+} */
+.navigation .text{
+    display: inline-flex;
+    margin-inline: 35px;
+    /* padding: 40px 0; */
+}
+.dot{
+    width: 10px;
+    height: 10px;
+    background: black;
+    border-radius: 50%;
+    display: inline-flex;
+    margin-inline: 5px;
+    
+}
+.links{
+
+}
+.line{
+    width: 2px;
+    height: 150px;
+    display: inline-flex;
+    background: black;
+    margin-inline: 8px;
+}
+
+.wrapper{
+    max-width: 1280px;
+    margin: auto;
+    padding: 0 2rem;
+}
+.character{
+    text-align: center;
+}
+.character-image{
+    width: 100%;
+    border-radius: 50%;
+    /* margin: 0 -2em; */
+}
+.character-labels{
+    max-width: 300px;
+}
+.character-label{
+    background: #685128;
+    padding: 1em;
+    color: white;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 25px;
+    font-weight: 400 ;
+    /* display: inline-flex; */
+}
+.character-name{
+    position : relative;
+    font-size: 30px;
+}
+.character-name h2:after {
+    content: "";
+    width: 87px;
+    height: 6px;
+    background-color: #F7391C;
+    display: inline-flex;
+    position: absolute;
+    left: calc(100% + 5px);
+    top: 50%;
+  }
+  
+  .placeholder-container {
+    /* max-width: 100vw; */
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
+  .character-name-placeholder {
+    color: rgba(0,0,0,.1);
+    font-size: 600px;
+    text-transform: uppercase;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    white-space: nowrap;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
+
+@media screen and (min-width: 1024px) {
+    .character-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "name image" "labels avatar";
+    }
+    .character-image{
+        grid-area: name;
+        width: 300px;
+        border-radius: 50%;
+        /* margin: 0 -2em; */
+    }
+    .character-name {
+        text-align: left;
+    }
+    .character-name h2{
+        font-size: 50px;
+        position: relative;
+        display: inline-flex;
+    }
+    .character-name h2:after{
+        content: "";
+        width: 87px;
+        height: 6px;
+        background-color: #F7391C;
+        display: inline-flex;
+        position: absolute;
+        left: calc(100% + 5px);
+        top: 50%;
+        
+    }
+    .character-labels{
+        grid-area: labels;
+        max-width: 300px;
+    }
+    .character-image{
+        grid-area: image;
+    }
+
+}
