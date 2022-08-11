@@ -15,6 +15,9 @@ export default class Character {
     this.$characterDescriptionContainer = document.querySelector(
       "#character-description-container"
     );
+    this.$characterNamePlaceHolder = document.querySelector(
+        "#name-placeholder"
+      );
     this.render();
   }
   buildImage() {
@@ -30,15 +33,17 @@ export default class Character {
   buildDescription() {
     return `
         <div class="character-labels">
-           <h3 class="character-label">Gender:---${this.gender}---</h3>
-           <h3 class="character-label">Species:---${this.species}---</h3>
-           <h3 class="character-label">Status:---${this.status}---</h3>
+           <h3 class="character-label">Gender:${this.gender}</h3>
+           <h3 class="character-label">Species:${this.species}</h3>
+           <h3 class="character-label">Status:${this.status}</h3>
         </div>`;
   }
+  
 
   render() {
     this.$characterImageContainer.innerHTML = this.buildImage();
     this.$characterNameContainer.innerHTML = this.buildName();
     this.$characterDescriptionContainer.innerHTML = this.buildDescription();
+    this.$characterNamePlaceHolder.innerHTML = this.name
   }
 }
